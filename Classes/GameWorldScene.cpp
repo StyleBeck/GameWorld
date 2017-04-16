@@ -1,15 +1,15 @@
-#include "HelloWorldScene.h"
+#include "GameWorldScene.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
+Scene* GameWorld::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = HelloWorld::create();
+    auto layer = GameWorld::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -19,7 +19,7 @@ Scene* HelloWorld::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool GameWorld::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -39,7 +39,7 @@ bool HelloWorld::init()
     auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
                                            "CloseSelected.png",
-                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+                                           CC_CALLBACK_1(GameWorld::menuCloseCallback, this));
     
     closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
@@ -64,7 +64,7 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
 
-    // add "HelloWorld" splash screen"
+    // add "GameWorld" splash screen"
     auto sprite = Sprite::create("HelloWorld.png");
 
     // position the sprite on the center of the screen
@@ -77,7 +77,7 @@ bool HelloWorld::init()
 }
 
 
-void HelloWorld::menuCloseCallback(Ref* pSender)
+void GameWorld::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
