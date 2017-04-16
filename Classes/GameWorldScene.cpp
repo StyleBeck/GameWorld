@@ -1,10 +1,12 @@
 #include "GameWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "Log.h"
 
 USING_NS_CC;
 
 Scene* GameWorld::createScene()
 {
+	LOG_FUNC_BEGIN
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
@@ -21,6 +23,7 @@ Scene* GameWorld::createScene()
 // on "init" you need to initialize your instance
 bool GameWorld::init()
 {
+	LOG_FUNC_BEGIN
     //////////////////////////////
     // 1. super init first
     if ( !Layer::init() )
@@ -34,7 +37,6 @@ bool GameWorld::init()
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
-
     // add a "close" icon to exit the progress. it's an autorelease object
     auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
@@ -79,6 +81,7 @@ bool GameWorld::init()
 
 void GameWorld::menuCloseCallback(Ref* pSender)
 {
+	LOG_FUNC_BEGIN
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
 
